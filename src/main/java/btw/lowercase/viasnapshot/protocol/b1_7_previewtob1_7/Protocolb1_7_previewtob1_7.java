@@ -47,7 +47,7 @@ public class Protocolb1_7_previewtob1_7 extends
 
 				handler(wrapper -> { // handles the conversion
 					if (wrapper.get(Types.SHORT, 1) == 359) { // if item is shears
-						wrapper.set(Types.SHORT, 2, (short) ((wrapper.get(Types.SHORT, 2) / 789) * 238)); // sets item
+						wrapper.set(Types.SHORT, 2, (short) ((wrapper.get(Types.SHORT, 2) / 238) * 789)); // 
 						// damage to
 						// (item
 						// damage/789)*238
@@ -72,7 +72,7 @@ public class Protocolb1_7_previewtob1_7 extends
 
 				handler(wrapper -> { // handles the conversion
 					if (wrapper.get(Types.SHORT, 0) == 359) { // if item is shears
-						wrapper.set(Types.SHORT, 1, (short) ((wrapper.get(Types.SHORT, 1) / 238) * 789)); // sets item
+						wrapper.set(Types.SHORT, 1, (short) ((wrapper.get(Types.SHORT, 1) / 789) * 238)); // 
 						// damage to
 						// (item
 						// damage/789)*238
@@ -100,7 +100,7 @@ public class Protocolb1_7_previewtob1_7 extends
 
 				handler(wrapper -> { // handles the conversion
 					if (wrapper.get(Types.SHORT, 0) == 359) { // if item is shears
-						wrapper.set(Types.SHORT, 1, (short) ((wrapper.get(Types.SHORT, 1) / 789) * 238)); // sets item
+						wrapper.set(Types.SHORT, 1, (short) ((wrapper.get(Types.SHORT, 1) / 238) * 789)); // 
 						// damage to
 						// (item
 						// damage/789)*238
@@ -134,7 +134,7 @@ public class Protocolb1_7_previewtob1_7 extends
 
 				handler(wrapper -> { // handles the conversion
 					if (wrapper.get(Types.SHORT, 2) == 359) { // if item is shears
-						wrapper.set(Types.SHORT, 3, (short) ((wrapper.get(Types.SHORT, 3) / 238) * 789)); // sets item
+						wrapper.set(Types.SHORT, 3, (short) ((wrapper.get(Types.SHORT, 3) / 789) * 238)); // 
 						// damage to
 						// (item
 						// damage/789)*238
@@ -157,7 +157,7 @@ public class Protocolb1_7_previewtob1_7 extends
 
 				handler(wrapper -> { // handles the conversion
 					if (wrapper.get(Types.SHORT, 2) == 359) { // if item is shears
-						wrapper.set(Types.SHORT, 3, (short) ((wrapper.get(Types.SHORT, 3) / 238) * 789)); // sets item
+						wrapper.set(Types.SHORT, 3, (short) ((wrapper.get(Types.SHORT, 3) / 789) * 238)); // 
 						// damage to
 						// (item
 						// damage/789)*238
@@ -184,7 +184,7 @@ public class Protocolb1_7_previewtob1_7 extends
 						wrapper.passthrough(Types.SHORT); // 2 damage
 						
 						if (wrapper.get(Types.SHORT, offset + 1) == 359) { // odds
-							wrapper.set(Types.SHORT, offset + 2, (short) ((wrapper.get(Types.SHORT, 2) / 238) * 789)); // evens
+							wrapper.set(Types.SHORT, offset + 2, (short) ((wrapper.get(Types.SHORT, 2) / 798) * 238)); // evens
 						}
 						offset++;offset++; // i feel lazy, will fix later
 					}
