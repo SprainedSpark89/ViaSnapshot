@@ -1,5 +1,6 @@
 plugins {
     id "java"
+	id "eclipse"
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(java_version)
