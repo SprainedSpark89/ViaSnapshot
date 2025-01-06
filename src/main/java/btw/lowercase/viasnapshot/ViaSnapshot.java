@@ -4,6 +4,7 @@ import btw.lowercase.viasnapshot.protocol.v15w31ato1_8.Protocol15w31a_To1_8;
 import btw.lowercase.viasnapshot.protocol.v15w31bto15w31a.Protocol15w31b_To15w31a;
 import btw.lowercase.viasnapshot.protocol.b1_7_previewtob1_7.Protocolb1_7_previewtob1_7;
 import btw.lowercase.viasnapshot.protocol.b1_6_tb3tob1_6.*;
+import btw.lowercase.viasnapshot.protocol.b1_6_previewtob1_6_tb3.*;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.ProtocolManager;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
@@ -29,6 +30,7 @@ public class ViaSnapshot extends ViaProxyPlugin {
             protocolManager.registerProtocol(new Protocol15w31b_To15w31a(), SnapshotProtocolVersion.v15w31b, SnapshotProtocolVersion.v15w31a);
             protocolManager.registerProtocol(new Protocolb1_7_previewtob1_7(), SnapshotProtocolVersion.b1_7_preview, LegacyProtocolVersion.b1_7tob1_7_3);
             protocolManager.registerProtocol(new Protocolb1_6_tb3tob1_6(), SnapshotProtocolVersion.b1_6_tb3, LegacyProtocolVersion.b1_6tob1_6_6);
+            protocolManager.registerProtocol(new Protocolb1_6_previewtob1_6_tb3(), SnapshotProtocolVersion.b1_6_tb3, LegacyProtocolVersion.b1_6tob1_6_6);
             return null;
         });
     }
