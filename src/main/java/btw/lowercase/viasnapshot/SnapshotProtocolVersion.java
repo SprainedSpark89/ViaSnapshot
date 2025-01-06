@@ -8,6 +8,7 @@ import com.viaversion.viaversion.protocol.RedirectProtocolVersion;
 import net.raphimc.vialegacy.api.LegacyProtocolVersion;
 
 public class SnapshotProtocolVersion {
+	public static final ProtocolVersion b1_6_preview = registerLegacy(VersionType.BETA_LATER, 11, "b1.6-preview");
 	public static final ProtocolVersion b1_6_tb3 = registerLegacy(VersionType.BETA_LATER, 12, "b1.6-tb3");
 	public static final ProtocolVersion b1_7_preview = registerLegacy(VersionType.BETA_LATER, 13, "b1.7-preview");
     public static final ProtocolVersion v15w31a = registerSnapshot1_8(49, "15w31a (Client Only)");
