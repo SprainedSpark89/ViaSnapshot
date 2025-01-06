@@ -11,6 +11,8 @@ public class SnapshotProtocolVersion {
 	public static final ProtocolVersion b1_6_preview = registerLegacy(VersionType.BETA_LATER, 11, "b1.6-preview");
 	public static final ProtocolVersion b1_6_tb3 = registerLegacy(VersionType.BETA_LATER, 12, "b1.6-tb3");
 	public static final ProtocolVersion b1_7_preview = registerLegacy(VersionType.BETA_LATER, 13, "b1.7-preview");
+	public static final ProtocolVersion b1_8_prerelease_1 = registerLegacy(VersionType.BETA_LATER, 15, "b1.8 prerelease 1 (leaked)-b1.8-prerelease 1 (reupload)");
+	public static final ProtocolVersion b1_8_prerelease_2Wink = registerLegacy(VersionType.BETA_LATER, 16, "b1.8 prerelease 2 ;)");
     public static final ProtocolVersion v15w31a = registerSnapshot1_8(49, "15w31a (Client Only)");
     public static final ProtocolVersion v15w31b = registerSnapshot1_8(50, "15w31b (Client Only)");
 
