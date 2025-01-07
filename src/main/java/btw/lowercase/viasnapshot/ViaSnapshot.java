@@ -10,6 +10,9 @@ import btw.lowercase.viasnapshot.protocol.b1_8_pre1tob1_8_pre2.*;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.ProtocolManager;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
+
+import net.lenni0451.classtransform.mixinstranslator.MixinsTranslator;
+import net.lenni0451.classtransform.utils.loader.InjectionClassLoader;
 import net.lenni0451.lambdaevents.EventHandler;
 import net.raphimc.vialegacy.api.LegacyProtocolVersion;
 import net.raphimc.viaproxy.ViaProxy;
@@ -20,6 +23,9 @@ public class ViaSnapshot extends ViaProxyPlugin {
     @Override
     public void onEnable() {
         ViaProxy.EVENT_MANAGER.register(this);
+        final InjectionClassLoader injectionClassLoader = (InjectionClassLoader) this.getClassLoader();
+        injectionClassLoader.getTransformerManager().addTransformerPreprocessor(new MixinsTranslator());
+        injectionClassLoader.getTransformerManager().addTransformer("btw.lowercase.viasnapshot.mixins.CorrectionsViaLegacy"); // registers mixin
     }
 
     @EventHandler

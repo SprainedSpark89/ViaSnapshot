@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(LegacyProtocolVersion.class)
-public class Corrections {
+public class CorrectionsViaLegacy {
 
     // Redirect the call to modify the name parameter
     @Redirect(
