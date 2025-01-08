@@ -25,7 +25,7 @@ public class ViaSnapshot extends ViaProxyPlugin {
         ViaProxy.EVENT_MANAGER.register(this);
         final InjectionClassLoader injectionClassLoader = (InjectionClassLoader) this.getClassLoader();
         injectionClassLoader.getTransformerManager().addTransformerPreprocessor(new MixinsTranslator());
-        injectionClassLoader.getTransformerManager().addTransformer("btw.lowercase.viasnapshot.mixins.CorrectionsViaLegacy"); // registers mixin
+        injectionClassLoader.getTransformerManager().addTransformer("btw.lowercase.viasnapshot.mixins.Corrections"); // registers mixin
     }
 
     @EventHandler
