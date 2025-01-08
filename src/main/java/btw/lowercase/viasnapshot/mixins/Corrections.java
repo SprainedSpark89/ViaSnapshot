@@ -1,27 +1,37 @@
 package btw.lowercase.viasnapshot.mixins;
 
-import org.spongepowered.asm.mixin.*;
-import org.spongepowered.asm.mixin.injection.*;
-import org.spongepowered.asm.mixin.injection.callback.*;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 
-@Mixin(ProtocolVersion.class)
-public abstract class Corrections {
+import javax.swing.*;
+import java.awt.*;
 
-	 // Shadow the existing getName method to access it
-    @Shadow
-    public abstract String getName();
+@Mixin(targets = "net.raphimc.viaproxy.ui.impl.GeneralTab$1") // Targets the anonymous inner class (DefaultListCellRenderer)
+public class Corrections extends DefaultListCellRenderer {
 
-    @Inject(method = "getName", at = @At("HEAD"), cancellable = true)
-    private void modifyGetName(CallbackInfoReturnable<String> cir) {
-        // Modify the output of getName() as desired
-        String originalName = getName(); // Call the original method if needed
-        String modifiedName = correctVersionRanges(originalName); // Example modification
-        cir.setReturnValue(modifiedName); // Override the method's return value
+    @Inject(
+        method = "getListCellRendererComponent",
+        at = @At("HEAD"),
+        cancellable = true
+    )
+    private void modifyProtocolVersionName(
+        JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus, CallbackInfoReturnable<Component> cir) {
+        
+        if (value instanceof ProtocolVersion version) {
+            // Modify the name using the custom logic
+            value = correctVersionRanges(version.getName());
+        }
+
+        // Call the original method with the modified value
+        Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+        cir.setReturnValue(result); // Cancel further processing and return the modified component
     }
 
-	private static String correctVersionRanges(String originalName) {
+    private static String correctVersionRanges(String originalName) {
 		String modifiedName = null;
 		if (originalName.equals("1.0.0-1.0.1")) {
 			modifiedName = "b1.9 prerelease 6-11w48a"; // 11w49a to 11w50a might have the same protocol as the others
