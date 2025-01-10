@@ -7,12 +7,11 @@ import btw.lowercase.viasnapshot.protocol.b1_6_tb3tob1_6.*;
 import btw.lowercase.viasnapshot.protocol.b1_6_previewtob1_6_tb3.*;
 import btw.lowercase.viasnapshot.protocol.b1_8_pre2tob1_8.*;
 import btw.lowercase.viasnapshot.protocol.b1_8_pre1tob1_8_pre2.*;
+import btw.lowercase.viasnapshot.protocol.v11w49ato1_1.*;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.ProtocolManager;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
 
-import net.lenni0451.classtransform.mixinstranslator.MixinsTranslator;
-import net.lenni0451.classtransform.utils.loader.InjectionClassLoader;
 import net.lenni0451.lambdaevents.EventHandler;
 import net.raphimc.vialegacy.api.LegacyProtocolVersion;
 import net.raphimc.viaproxy.ViaProxy;
@@ -23,9 +22,6 @@ public class ViaSnapshot extends ViaProxyPlugin {
     @Override
     public void onEnable() {
         ViaProxy.EVENT_MANAGER.register(this);
-        final InjectionClassLoader injectionClassLoader = (InjectionClassLoader) this.getClassLoader();
-        injectionClassLoader.getTransformerManager().addTransformerPreprocessor(new MixinsTranslator());
-        injectionClassLoader.getTransformerManager().addTransformer("btw.lowercase.viasnapshot.mixins.Corrections"); // registers mixin
     }
 
     @EventHandler
@@ -36,6 +32,7 @@ public class ViaSnapshot extends ViaProxyPlugin {
             final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
             protocolManager.registerProtocol(new Protocol15w31a_To1_8(), SnapshotProtocolVersion.v15w31a, ProtocolVersion.v1_8);
             protocolManager.registerProtocol(new Protocol15w31b_To15w31a(), SnapshotProtocolVersion.v15w31b, SnapshotProtocolVersion.v15w31a);
+            protocolManager.registerProtocol(new Protocol11w49a_to_1_1(), SnapshotProtocolVersion.v11w49a, LegacyProtocolVersion.r1_1);
             protocolManager.registerProtocol(new Protocolb1_8_pre2tob1_8(), SnapshotProtocolVersion.b1_8_prerelease_2Wink, LegacyProtocolVersion.b1_8tob1_8_1);
             protocolManager.registerProtocol(new Protocolb1_8_pre1tob1_8_pre2(), SnapshotProtocolVersion.b1_8_prerelease_1, SnapshotProtocolVersion.b1_8_prerelease_2Wink);
             protocolManager.registerProtocol(new Protocolb1_7_previewtob1_7(), SnapshotProtocolVersion.b1_7_preview, LegacyProtocolVersion.b1_7tob1_7_3);

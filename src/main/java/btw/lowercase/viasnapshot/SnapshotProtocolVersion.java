@@ -13,11 +13,18 @@ public class SnapshotProtocolVersion {
 	public static final ProtocolVersion b1_7_preview = registerLegacy(VersionType.BETA_LATER, 13, "b1.7-preview");
 	public static final ProtocolVersion b1_8_prerelease_1 = registerLegacy(VersionType.BETA_LATER, 15, "b1.8 prerelease 1 (leaked)-b1.8-prerelease 1 (reupload)");
 	public static final ProtocolVersion b1_8_prerelease_2Wink = registerLegacy(VersionType.BETA_LATER, 16, "b1.8 prerelease 2 ;)");
+	public static final ProtocolVersion v11w49a = registerSnapshot(22, "11w49a-11w50a", LegacyProtocolVersion.r1_1);
     public static final ProtocolVersion v15w31a = registerSnapshot1_8(49, "15w31a (Client Only)");
     public static final ProtocolVersion v15w31b = registerSnapshot1_8(50, "15w31b (Client Only)");
 
     private static ProtocolVersion registerSnapshot1_8(final int version, final String name) {
         final ProtocolVersion protocolVersion = new RedirectProtocolVersion(version, name, ProtocolVersion.v1_8);
+        ProtocolVersion.register(protocolVersion);
+        return protocolVersion;
+    }
+    
+    private static ProtocolVersion registerSnapshot(final int version, final String name, ProtocolVersion baseVersion) {
+        final ProtocolVersion protocolVersion = new RedirectProtocolVersion(version, name, baseVersion);
         ProtocolVersion.register(protocolVersion);
         return protocolVersion;
     }
