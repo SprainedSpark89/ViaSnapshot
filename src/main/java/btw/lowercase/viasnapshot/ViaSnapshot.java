@@ -10,6 +10,7 @@ import btw.lowercase.viasnapshot.protocol.b1_8_pre1tob1_8_pre2.*;
 import btw.lowercase.viasnapshot.protocol.v12w07bto1_2.*;
 import btw.lowercase.viasnapshot.protocol.v11w49ato1_1.*;
 import btw.lowercase.viasnapshot.protocol.v12w06ato12w07a.*;
+import btw.lowercase.viasnapshot.protocol.v12w05ato12w06a.*;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.ProtocolManager;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
@@ -34,6 +35,7 @@ public class ViaSnapshot extends ViaProxyPlugin {
             final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
             protocolManager.registerProtocol(new Protocol15w31a_To1_8(), SnapshotProtocolVersion.v15w31a, ProtocolVersion.v1_8);
             protocolManager.registerProtocol(new Protocol15w31b_To15w31a(), SnapshotProtocolVersion.v15w31b, SnapshotProtocolVersion.v15w31a);
+            protocolManager.registerProtocol(new Protocol12w05a_to_12w06a(), SnapshotProtocolVersion.v12w05a, SnapshotProtocolVersion.v12w06a);
             protocolManager.registerProtocol(new Protocol12w06a_to12w07a(), SnapshotProtocolVersion.v12w06a, SnapshotProtocolVersion.v12w07b);
             protocolManager.registerProtocol(new Protocol12w07b_To1_2(), SnapshotProtocolVersion.v12w07b, LegacyProtocolVersion.r1_2_1tor1_2_3);
             protocolManager.registerProtocol(new Protocol11w49a_to_1_1(), SnapshotProtocolVersion.v11w49a, LegacyProtocolVersion.r1_1);
