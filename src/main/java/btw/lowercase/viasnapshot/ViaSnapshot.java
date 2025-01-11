@@ -35,6 +35,7 @@ public class ViaSnapshot extends ViaProxyPlugin {
             final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
             protocolManager.registerProtocol(new Protocol15w31a_To1_8(), SnapshotProtocolVersion.v15w31a, ProtocolVersion.v1_8);
             protocolManager.registerProtocol(new Protocol15w31b_To15w31a(), SnapshotProtocolVersion.v15w31b, SnapshotProtocolVersion.v15w31a);
+            protocolManager.registerProtocol(new Protocol12w05a_to_12w06a(), SnapshotProtocolVersion.v12w03a, SnapshotProtocolVersion.v12w05a);
             protocolManager.registerProtocol(new Protocol12w05a_to_12w06a(), SnapshotProtocolVersion.v12w05a, SnapshotProtocolVersion.v12w06a);
             protocolManager.registerProtocol(new Protocol12w06a_to12w07a(), SnapshotProtocolVersion.v12w06a, SnapshotProtocolVersion.v12w07b);
             protocolManager.registerProtocol(new Protocol12w07b_To1_2(), SnapshotProtocolVersion.v12w07b, LegacyProtocolVersion.r1_2_1tor1_2_3);
