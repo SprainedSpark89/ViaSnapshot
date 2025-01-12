@@ -23,6 +23,7 @@ public class SnapshotProtocolVersion {
     //kennytv commits to viaversion just copied over to here for addition of snapshots and stuff:
     public static final ProtocolVersion v1_21_4_RC3 = ProtocolVersion.register(769, 228, "1.21.4-rc3");
     public static final ProtocolVersion v1_21_4_RC2 = ProtocolVersion.register(769, 227, "1.21.4-rc2");
+    public static final ProtocolVersion v1_21_4_RC1 = ProtocolVersion.register(769, 226, "1.21.4-rc1");
 
     private static ProtocolVersion registerSnapshot1_8(final int version, final String name) {
         final ProtocolVersion protocolVersion = new RedirectProtocolVersion(version, name, ProtocolVersion.v1_8);
