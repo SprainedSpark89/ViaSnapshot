@@ -35,6 +35,9 @@ public class ViaSnapshot extends ViaProxyPlugin {
             // Adds this to the VV dump
             Via.getManager().getSubPlatforms().add(String.format("git-ViaSnapshot-%s", getVersion()));
             final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
+            protocolManager.registerProtocol(new Protocol1_21_2To1_21_4_RC2(), SnapshotProtocolVersion.v1_21_4_pre1, ProtocolVersion.v1_21_4);
+            protocolManager.registerProtocol(new Protocol1_21_2To1_21_4_RC2(), SnapshotProtocolVersion.v1_21_4_pre2, ProtocolVersion.v1_21_4);
+            protocolManager.registerProtocol(new Protocol1_21_2To1_21_4_RC2(), SnapshotProtocolVersion.v1_21_4_Pre3, ProtocolVersion.v1_21_4);
             protocolManager.registerProtocol(new Protocol1_21_2To1_21_4_RC2(), SnapshotProtocolVersion.v1_21_4_RC1, ProtocolVersion.v1_21_4);
             protocolManager.registerProtocol(new Protocol1_21_2To1_21_4_RC2(), SnapshotProtocolVersion.v1_21_4_RC2, ProtocolVersion.v1_21_4);
             protocolManager.registerProtocol(new Protocol1_21_2To1_21_4(), SnapshotProtocolVersion.v1_21_4_RC3, ProtocolVersion.v1_21_2);

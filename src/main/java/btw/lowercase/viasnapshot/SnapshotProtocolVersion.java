@@ -24,6 +24,9 @@ public class SnapshotProtocolVersion {
     public static final ProtocolVersion v1_21_4_RC3 = ProtocolVersion.register(769, 228, "1.21.4-rc3");
     public static final ProtocolVersion v1_21_4_RC2 = ProtocolVersion.register(769, 227, "1.21.4-rc2");
     public static final ProtocolVersion v1_21_4_RC1 = ProtocolVersion.register(769, 226, "1.21.4-rc1");
+    public static final ProtocolVersion v1_21_4_Pre3 = ProtocolVersion.register(769, 225, "1.21.4-pre3");
+    public static final ProtocolVersion v1_21_4_pre2 = ProtocolVersion.register(769, 224, "1.21.4-pre2");
+    public static final ProtocolVersion v1_21_4_pre1 = ProtocolVersion.register(769, 223, "1.21.4-pre1");
 
     private static ProtocolVersion registerSnapshot1_8(final int version, final String name) {
         final ProtocolVersion protocolVersion = new RedirectProtocolVersion(version, name, ProtocolVersion.v1_8);
