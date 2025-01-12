@@ -6,8 +6,20 @@
 
 Supported Versions:
 
+- b1.6-preview
+- b1.6-tb3
+- b1.7-preview
+- b1.8 prerelease 1 (leaked)-b1.8-prerelease 1 (reupload)
+- b1.8 prerelease 2 ;)
+- 11w49a-11w50a
+- 12w03a
+- 12w04a-12w05a
+- 12w06a
+- 12w07a/b
 - 15w31a
 - 15w31b
+- 1.21.4-pre1/2/3
+- 1.21.4-rc1/2/3
 
 Known Issues:
 
