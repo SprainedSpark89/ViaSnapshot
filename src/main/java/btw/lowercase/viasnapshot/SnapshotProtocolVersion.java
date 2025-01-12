@@ -27,6 +27,8 @@ public class SnapshotProtocolVersion {
     public static final ProtocolVersion v1_21_4_Pre3 = ProtocolVersion.register(769, 225, "1.21.4-pre3");
     public static final ProtocolVersion v1_21_4_pre2 = ProtocolVersion.register(769, 224, "1.21.4-pre2");
     public static final ProtocolVersion v1_21_4_pre1 = ProtocolVersion.register(769, 223, "1.21.4-pre1");
+    // custom stuff
+    public static final ProtocolVersion v25w02a = ProtocolVersion.register(770 /*< assuming the next release version is that protocol*/ , decodeSnapshotVersion(1073742053) /*229*/, "25w02a");
 
     private static ProtocolVersion registerSnapshot1_8(final int version, final String name) {
         final ProtocolVersion protocolVersion = new RedirectProtocolVersion(version, name, ProtocolVersion.v1_8);
@@ -49,5 +51,12 @@ public class SnapshotProtocolVersion {
         ProtocolVersion.register(protocolVersion);
         LegacyProtocolVersion.PROTOCOLS.add(protocolVersion);
         return protocolVersion;
+    }
+    
+    // chatgpt thing:
+    public static int decodeSnapshotVersion(int encodedNumber) {
+        // Mask to extract the lower 30 bits
+        int mask = (1 << 30) - 1;
+        return encodedNumber & mask;
     }
 }
