@@ -13,6 +13,7 @@ import btw.lowercase.viasnapshot.protocol.v12w06ato12w07a.*;
 import btw.lowercase.viasnapshot.protocol.v12w05ato12w06a.*;
 import com.viaversion.viaversion.protocols.v1_21_2to1_21_4.Protocol1_21_2To1_21_4;
 import btw.lowercase.viasnapshot.protocol.v1_21_2to1_21_4_RC2.*;
+import btw.lowercase.viasnapshot.protocol.v25w02ato1_21_4.*;
 import com.viaversion.viaversion.api.Via;
 import com.viaversion.viaversion.api.protocol.ProtocolManager;
 import com.viaversion.viaversion.api.protocol.version.ProtocolVersion;
@@ -35,6 +36,7 @@ public class ViaSnapshot extends ViaProxyPlugin {
             // Adds this to the VV dump
             Via.getManager().getSubPlatforms().add(String.format("git-ViaSnapshot-%s", getVersion()));
             final ProtocolManager protocolManager = Via.getManager().getProtocolManager();
+            protocolManager.registerProtocol(new Protocol25w02ato1_21_4(), SnapshotProtocolVersion.v25w02a, ProtocolVersion.v1_21_4);
             protocolManager.registerProtocol(new Protocol1_21_2To1_21_4_RC2(), SnapshotProtocolVersion.v1_21_4_pre1, ProtocolVersion.v1_21_4);
             protocolManager.registerProtocol(new Protocol1_21_2To1_21_4_RC2(), SnapshotProtocolVersion.v1_21_4_pre2, ProtocolVersion.v1_21_4);
             protocolManager.registerProtocol(new Protocol1_21_2To1_21_4_RC2(), SnapshotProtocolVersion.v1_21_4_Pre3, ProtocolVersion.v1_21_4);
