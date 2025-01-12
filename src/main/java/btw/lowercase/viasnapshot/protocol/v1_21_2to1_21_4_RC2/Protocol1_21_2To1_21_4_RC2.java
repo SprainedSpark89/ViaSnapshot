@@ -20,21 +20,25 @@ package btw.lowercase.viasnapshot.protocol.v1_21_2to1_21_4_RC2;
 
 import com.viaversion.viaversion.api.minecraft.data.StructuredDataKey;
 import com.viaversion.viaversion.api.minecraft.entities.EntityTypes1_21_4;
-
+import com.viaversion.viaversion.api.protocol.AbstractProtocol;
 import com.viaversion.viaversion.api.type.types.misc.ParticleType;
 
 import com.viaversion.viaversion.api.type.types.version.Types1_21_4;
 
 import com.viaversion.viaversion.protocols.v1_21_2to1_21_4.Protocol1_21_2To1_21_4;
+import com.viaversion.viaversion.protocols.v1_21_2to1_21_4.packet.ServerboundPacket1_21_4;
+import com.viaversion.viaversion.protocols.v1_21to1_21_2.packet.ClientboundPacket1_21_2;
+import com.viaversion.viaversion.protocols.v1_21to1_21_2.packet.ServerboundPacket1_21_2;
 
+import btw.lowercase.viasnapshot.protocol.v1_21_2to1_21_4_RC2.rewriter.BlockItemPacketRewriter1_21_4_RC2;
 import btw.lowercase.viasnapshot.types.versions.Types1_21_4_RC2;
 
-public final class Protocol1_21_2To1_21_4_RC2 extends Protocol1_21_2To1_21_4 {
-
+public final class Protocol1_21_2To1_21_4_RC2 extends AbstractProtocol<ClientboundPacket1_21_2, ClientboundPacket1_21_2, ServerboundPacket1_21_4, ServerboundPacket1_21_4> {
+	private final BlockItemPacketRewriter1_21_4_RC2 itemRewriter = new BlockItemPacketRewriter1_21_4_RC2(this);
     @Override
     protected void onMappingDataLoaded() {
         EntityTypes1_21_4.initialize(this);
-        Types1_21_4.PARTICLE.filler(this)
+        Types1_21_4_RC2.PARTICLE.filler(this)
             .reader("block", ParticleType.Readers.BLOCK)
             .reader("block_marker", ParticleType.Readers.BLOCK)
             .reader("dust_pillar", ParticleType.Readers.BLOCK)
