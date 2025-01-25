@@ -30,6 +30,7 @@ public class SnapshotProtocolVersion {
     // custom stuff
     public static final ProtocolVersion v25w02a = ProtocolVersion.register(770 /*< assuming the next release version is that protocol*/ , decodeSnapshotVersion(1073742053) /*229*/, "25w02a");
 	public static final ProtocolVersion v25w03a = ProtocolVersion.register(770 /*< assuming the next release version is that protocol*/ , decodeSnapshotVersion(1073742054) /*230*/, "25w03a");
+	public static final ProtocolVersion v25w04a = ProtocolVersion.register(770 /*< assuming the next release version is that protocol*/ , decodeSnapshotVersion(1073742055) /*231*/, "25w04a");
 
     private static ProtocolVersion registerSnapshot1_8(final int version, final String name) {
         final ProtocolVersion protocolVersion = new RedirectProtocolVersion(version, name, ProtocolVersion.v1_8);
